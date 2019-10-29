@@ -13,4 +13,6 @@ func getAttendee(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func updateAttendee(w http.ResponseWriter, r *http.Request) {}
+func updateAttendee(w http.ResponseWriter, r *http.Request) {
+
+}
