@@ -11,11 +11,11 @@ import (
 func Run() {
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
-		AllowedMethods:   []string{http.MethodGet, http.MethodPost, http.MethodDelete, http.MethodOptions},
+		AllowedMethods:   []string{http.MethodGet, http.MethodPost, http.MethodPut, http.MethodOptions},
 		AllowCredentials: true,
-		AllowedHeaders:   []string{"Api-key", "Content-Type", "Accept"},
+		AllowedHeaders:   []string{"Authorization", "Content-Type", "Accept"},
 	})
-	fmt.Println(http.ListenAndServe(":8080", c.Handler(GetRouter())))
+	fmt.Println(http.ListenAndServe(":3000", c.Handler(GetRouter())))
 }
 
 func GetRouter() *mux.Router {
